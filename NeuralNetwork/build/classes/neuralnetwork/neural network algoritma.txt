@@ -1,0 +1,15 @@
+Learning neuron network
+
+1. 1 epoch = (inputSequence[x1,x2,..]), target[], weight[bias=1, w1, w2], treshold = 0
+2. randomWeight[j] 0~1
+3. input x1, x2, ---> summation() ---> output
+4. if(output = target) w tetap
+5. if(output != target) 
+	err = target - output
+		if(err <> 0)
+			weight[j] += (miu*input[j]*err)  #miu = learning rate 0~1
+							 #perkalian vektor
+6. berhenti looping
+	- total iterasi epoch yang ditentukan sendiri
+	- kesesuaian vektor satuan
+		1. ??????

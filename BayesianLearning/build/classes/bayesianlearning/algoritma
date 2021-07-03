@@ -1,0 +1,36 @@
+
+
+            DATA
+1. input datatraining ---> gejala yg diketahui
+2. input datatesting ---> gejala baru
+3. jumlahLabel()
+    jumlahYa, jumlahTidak; ---> kalo kasus wildan brrti cari jumlahY1 (IC charger), jumlahY2 (IC power), dll
+
+            BAYESIAN
+1. fakta
+    cocokkan string sesuai kolom atribut (gejala)
+    for(i<dataTesting.length)
+            for(int j=0; j<dataTraining.length; j++)
+                if(dataTesting[i].equalsignorecase(dataTraining[j][i])
+    cari labelnya
+                    if(dataTraining[j][dataTraining.length-1].equals("Ya")
+                        faktaYa++; //ya
+                    else
+                        faktaTidak++; //tidak
+                    ---> kalo kasus wildan berati ntar ada  if (..equals(Y1)) faktaY1++, 
+                                                            if else (..equals(fY2)) fakta Y2++, ....
+    dibagi jumlahYa
+            peluangfaktaYa[i] /= jumlahYa;
+            peluangfaktaTidak[i] /= jumlahTidak;
+            ---> peluangfaktaY1 /= jumlahY1 untuk mencari P(X|Y1),
+                 peluangfaktaY2 /= jumlahY2 untuk mencari P(X|Y2), dll 
+    
+2. perhitungan classifier
+    classYa()
+        for(int i=0; i<dataTesting.length;i++)
+            resultYa *= peluangfaktaYa[i];
+            resultTidak *= peluangfaktaTidak[i];
+        resultYa *= peluangYa;
+        resultTidak *= peluangTidak;
+
+    

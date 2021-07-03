@@ -1,0 +1,36 @@
+
+        KMEANS
+1. random k centroid
+2. hitung jarak dataSet ke k centroid
+        1   1
+            2
+            3
+        2   1
+            2
+            3
+        ...
+3. hitung jarak terdekat antara k centroid
+    jarak terdekat = cluster
+4. hitung titik tengah data2 yang memilih centroid kemudian titik tengah = centroid
+
+5. ulangi hingga titik centroid awal = centroid akhir
+    
+6. tampilkan titik centroid dan data(?)
+
+    
+        VARIANCE CLUSTER
+1. hitung banyak data (n) dari cluster
+2. for (i=0, i<n)
+        jumlah+=(dataCluster[i] - centroid[k])^2
+3. (1/(n-1))*jumlah;
+
+
+        VARIANCE WITHIN
+1. jumlah+=((dataPerCluster[i]-1)*vC[i])
+2. jumlah/(dataCluster.length - k);
+
+
+        VARIANCE BETWEEN
+1. rata2 centroid
+2. jumlah+= (centroid[i] - rata2Centroid);
+3. jumlah/(centroid.length -1)

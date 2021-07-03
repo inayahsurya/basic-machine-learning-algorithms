@@ -1,0 +1,40 @@
+OPTIMASI KMEANS
+
+individu = [x1y1 x2y2 x3y3 x4y4]
+kromosom = [x1y1] ... [xnyn]
+gen = [x],[y]
+
+1. random populasi awal centroid
+
+2. evaluasi fitness
+	1. setiap data hitung jarak ke kromosom
+            
+            ind1    data1   x1,y1
+                            x2,y2
+                            ...     
+                            xn,yn
+                    data2   x1,y1
+                            ...
+                            xn,yn
+                    ...
+                    datan
+            ind2    data1   x1,y1
+                            x2,y2
+                            ...     
+                            xn,yn
+                    data2   x1,y1
+                            ...
+                            xn,yn
+                    ...
+                    datan
+            
+	2. pilih kromosom dengan jarak terdekat
+	3. minimum J = jumlah semua jarak --> smkn kecil bagus
+	4. fitness = 1000 - J
+
+3. setCentroid
+    centroid = individu rank 1
+
+4. clustering
+
+N. plot centroidTerbaik setiap generasi pada chart
