@@ -1,0 +1,56 @@
+ALLELE > GEN > KROMOSOM > INDIVIDU
+1. cari constraint problem
+
+POPULASI AWAL
+1. tentukan n individu
+2. tentukan n kromosom sesuai problem
+3. generate random kromosom sebanyak n kromosom dikali n individu
+
+EVALUASI FITNESS
+1. cari kriteria objektif
+	obj = total jarak
+2. cari nilai objektif dari setiap individu
+	obj = 1/total jarak min --> maximasi
+
+SELEKSI INDIVIDU
+a. Mesin roullete
+	0. jadikan individu1 --> parent1
+	1. generate randomNumber1 pada masing2 individu
+	2. total randomNumber1 pada semua individu
+	3. buat range pada setiap individu (i++). semakin besar range semakin besar kemungkinan dipilih
+	4. generate random number [1 ~ total randomNumber1]
+	5. pilih individu yg random number berada di range nya sebagai parent2
+
+        ind1 = 6 -> 1~6
+        ind2 = 3 -> 6~9
+        ind3 = 1 -> 9~10
+             -----+
+               10
+b. turnamen
+
+CROSS OVER
+1. seleksiIndividu()
+2. tentukan prob random (p) random[0~1]
+3. tentukan probKonstanta
+4. if p < probKons --> crossOver
+a. PERTUKARAN LANGSUNG
+	1. tentukan batas kiri -> random [1 ~ totalKromosom-1]
+	2. tentukan batas kanan -> random [batasKiri+1 ~ totalKromosom]
+	3. (kromosom batas kiri ~ batas kanan) parent1 ditukar dengan parent2
+	4. cek pakah pertukaran melanggar constraint
+	5. edit pertukaran ????
+b. PERTUKARAN ARITMATIKA
+	1. tentukan nilai peubah
+	2. tentukan batas kiri -> random [1 ~ totalKromosom-1]
+	3. tentukan batas kanan -> random [batasKiri+1 ~ totalKromosom]
+	4. (kromosom parent1 * peubah) + (kromosom parent2 * (1-peubah))
+6. offSpring = hasil crossover
+
+MUTASI GEN
+1. random index kromosom
+2. tentukan nilai peubah (jika ada)
+3. ubah kromosom[i] + nilai peubah
+4. offSrping = hasil mutasi
+
+ELITISIM
+1. parent(n) dan offspring(n) digabung
